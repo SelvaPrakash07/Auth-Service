@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    password: 'Selva@2000'
+    url: 'jdbc:mysql://localhost:3306/oauth'  #'jdbc:mysql://95.217.209.135:3306/unnamed_dev?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC'
+    username: 'root'
+
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: "10000"
+      maximum-pool-size: "20"
+      minimum-idle: "5"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+      naming: {physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl}
+    properties:
+      hibernate:
+        format_sql: false
+        enable_lazy_load_no_trans: true
+      show-sql: true
+  freemarker:
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+
+app:
+  oauth-private-key: oauth-private.key
+  oauth-public-key: oauth-public.key
+  subject : UN_NAMED_COHERENT_ATTENDENCE
+  issuer : COHERENT_ATTENDENCE
+  mail.host : mail.coherent.in
+  mail.port : 587
+  mail.username : noreply@coherent.in
+  mail.password : Coherent@2021
+  mail.smtp.auth : true
+  mail.smtp.starttls.enable : true
